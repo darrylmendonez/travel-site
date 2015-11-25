@@ -3,6 +3,8 @@ $(document).ready(function(){
   // Empty field msg
   $("#empty-field-msg").hide();
 
+  $(".listing").hide();
+
   // Datepicker for checkin and checkout
   $(".datepicker").pickadate();
 
@@ -67,7 +69,14 @@ $(document).ready(function(){
       $("#empty-field-msg").slideDown(500);
       return;
     };
-  });
+
+    // Value of location gets placed in listing
+    var placeholderLocation = $(".placeholder-location");
+    placeholderLocation.replaceWith($("<span>").append(location));
+
+    $(".listing").fadeIn(500);
+
+  }); // End #search-button click
 
   $("#location").on("focus", function() {
       $("#empty-field-msg").fadeOut(500);
