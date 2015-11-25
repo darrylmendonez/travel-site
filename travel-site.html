@@ -77,33 +77,39 @@
         <div class="panel-body">
           <form class="form-horizontal form-inline">
             <div class="form-group">
-              <div class="buffer"></div>
-              <i class="fa fa-globe"></i> <input type="text" class="form-control" placeholder="Where">
-              <div class="buffer"></div>
-              <i class="fa fa-calendar-check-o"></i> <input type="text" class="datepicker fieldset__input js__datepicker picker__input form-control" placeholder="Check in">
-              <div class="buffer"></div>
-              <i class="fa fa-calendar-times-o"></i> <input type="text" class="datepicker fieldset__input js__datepicker picker__input form-control" placeholder="Check out">
-              <div class="buffer"></div>
-              Rooms: 
-              <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-              </select>
-              <div class="buffer"></div>
-              Guests:
+              <div class="row">
+                <div class="buffer"></div>
+                <i class="fa fa-globe"></i> <input type="text" class="form-control" placeholder="Where">
+                <div class="buffer"></div>
+                <i class="fa fa-calendar-check-o"></i> <input type="text" class="datepicker fieldset__input js__datepicker picker__input form-control" placeholder="Check in">
+                <div class="buffer"></div>
+                <i class="fa fa-calendar-times-o"></i> <input type="text" class="datepicker fieldset__input js__datepicker picker__input form-control" placeholder="Check out">
+              </div> <!-- end row -->
+              <div class="row-buffer"></div>
+              <div class="row">
+                <div class="buffer"></div>
+                Rooms: 
                 <select class="form-control">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
                 </select>
-              <div class="buffer"></div>
-              <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                <div class="buffer"></div>
+                Guests:
+                  <select class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                <div class="buffer"></div>
+                Rating: <i id="one-star" class="fa fa-star-o"></i><i id="two-stars" class="fa fa-star-o"></i><i id="three-stars" class="fa fa-star-o"></i><i id="four-stars" class="fa fa-star-o"></i><i id="five-stars" class="fa fa-star-o"></i>
+                <div class="buffer"></div>
+                <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+              </div> <!-- end row -->
             </div>
           </form>
-        </div>
       </div>
     </div>
   </div>
