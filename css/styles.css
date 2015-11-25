@@ -4,5 +4,25 @@
 
 .buffer {
   display: inline-block;
-  margin-left: 25px;
+  width: 25px;
+}
+
+.row-buffer {
+  margin-top: 10px;
+}
+
+.white-text {
+  color: white;
+}
+
+.red-text {
+  color: red;
+}
+
+.inline {
+  display: inline;
+}
+
+.listing-img {
+  width: 250px;
 }
