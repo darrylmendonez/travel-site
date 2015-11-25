@@ -79,11 +79,11 @@
             <div class="form-group">
               <div class="row-fluid">
                 <div class="buffer"></div>
-                <i class="fa fa-globe"></i> <input type="text" class="form-control" placeholder="Where">
+                <i class="fa fa-globe"></i> <input id="location" type="text" class="form-control" placeholder="Where"><span class="red-text">*</span>
                 <div class="buffer"></div>
-                <i class="fa fa-calendar-check-o"></i> <input type="text" class="datepicker fieldset__input js__datepicker picker__input form-control" placeholder="Check in">
+                <i class="fa fa-calendar-check-o"></i> <input id="check-in" type="text" class="datepicker fieldset__input js__datepicker picker__input form-control" placeholder="Check in"><span class="red-text">*</span>
                 <div class="buffer"></div>
-                <i class="fa fa-calendar-times-o"></i> <input type="text" class="datepicker fieldset__input js__datepicker picker__input form-control" placeholder="Check out">
+                <i class="fa fa-calendar-times-o"></i> <input id="check-out" type="text" class="datepicker fieldset__input js__datepicker picker__input form-control" placeholder="Check out"><span class="red-text">*</span>
                 <div class="buffer"></div>
                 Rooms: 
                 <select class="form-control">
@@ -129,7 +129,10 @@
                 <div class="buffer"></div>
                 <div class="buffer"></div>
                 <div class="buffer"></div>
-                <button class="btn btn-primary"><i class="fa fa-search"> Search</i></button>
+                <button type="button" id="search-button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Enter required fields"><i class="fa fa-search"> Search</i></button>
+                <div id="empty-field-msg" class="alert alert-danger inline" role="alert">
+                  <p>Enter required fields</p>
+                </div>
               </div> <!-- end row -->
             </div>
           </form>

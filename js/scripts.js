@@ -1,8 +1,14 @@
 $(document).ready(function(){
 
+  // Empty field msg
+  $("#empty-field-msg").hide();
+
   // Datepicker for checkin and checkout
-  $('.datepicker').pickadate();
-  $('.timepicker').pickatime();
+  $(".datepicker").pickadate();
+
+  // Tooltip Toggle
+  // Can't get this to work
+  // $("#search-button").tooltip();
 
   // Star ratings - This is very WET. Need to DRY.
   // White stars to black
@@ -50,6 +56,27 @@ $(document).ready(function(){
     $("#four-stars-o").replaceWith($(fourBlackStars));
     $("#five-stars-o").replaceWith($(fiveBlackStars));
   });
-  
+
+  $("#search-button").on("click", function(e){
+    e.preventDefault();
+    var location = $("#location").val().trim();
+    var checkIn = $("#check-in").val().trim();
+    var checkOut = $("#check-out").val().trim();
+
+    if (location === "" || checkIn === "" || checkOut === ""){
+      $("#empty-field-msg").slideDown(500);
+      return;
+    };
+  });
+
+  $("#location").on("focus", function() {
+      $("#empty-field-msg").fadeOut(500);
+    });
+  $("#check-in").on("focus", function() {
+      $("#empty-field-msg").fadeOut(500);
+    });
+  $("#check-out").on("focus", function() {
+      $("#empty-field-msg").fadeOut(500);
+    });
 
 });

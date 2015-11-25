@@ -7,10 +7,18 @@
   width: 25px;
 }
 
+.row-buffer {
+  margin-top: 10px;
+}
+
 .white-text {
   color: white;
 }
 
-.row-buffer {
-  margin-top: 10px;
+.red-text {
+  color: red;
+}
+
+.inline {
+  display: inline;
 }
