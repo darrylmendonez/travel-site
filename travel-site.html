@@ -3,6 +3,8 @@
 <head>
   <title>Booked &#9992;</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha256-obxCG8hWR3FEKvV19p/G6KgEYm1v/u1FnRTS7Bc4Ii8= sha512-8Xs5FuWgtHH1JXye8aQcxVEtLqozJQAu8nhPymuRqeEslT6nJ2OgEYeS3cKiXasOVxYPN80DDoOTKWgOafU1LQ==" crossorigin="anonymous">
+  <link rel="shortcut icon" href="icon/favicon.ico" type="image/x-icon">
+  <title>Travel Site</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
@@ -17,10 +19,49 @@
         </div>
     </div>
   </nav>
-  <header>
-  <!-- Carousel Placeholder -->
-  </header>
   <main class="container">
+    <div id="main-carousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#main-carousel" data-slide-to="1"></li>
+        <li data-target="#main-carousel" data-slide-to="2"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="carousel/asia.jpg" alt="Asia">
+            <div class="carousel-caption">
+              <h3>Asia</h3>
+          </div>
+          <div class="carousel-responsive">
+
+          </div>
+        </div>
+        <div class="item">
+          <img src="carousel/berlin.jpg" alt="Berlin">
+            <div class="carousel-caption">
+            <h3>Berlin</h3>
+          </div>
+        <div class="carousel-responsive">
+          </div>
+        </div>
+        <div class="item">
+          <img src="carousel/paris.jpg" alt="Paris">
+            <div class="carousel-caption">
+            <h3>Paris</h3>
+          </div>
+          <div class="carousel-responsive">
+        </div>
+      </div>
+      <!-- Controls -->
+      <a class="carousel-control left" href="#main-carousel" data-slide="prev">
+        <span class="icon-prev"</span> 
+      </a>
+      <a class="right carousel-control" href="#main-carousel" data-slide="next">
+        <span class="icon-next"</span>
+      </a>
+    </div>
   <div class="row">
     <div class="col-md-12">
       <div class="panel panel-primary">
@@ -44,7 +85,6 @@
       </div>
     </div>
   </div>
-  </main>
   <footer>
 
   </footer>
