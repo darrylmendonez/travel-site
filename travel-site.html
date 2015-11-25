@@ -77,16 +77,13 @@
         <div class="panel-body">
           <form class="form-horizontal form-inline">
             <div class="form-group">
-              <div class="row">
+              <div class="row-fluid">
                 <div class="buffer"></div>
                 <i class="fa fa-globe"></i> <input type="text" class="form-control" placeholder="Where">
                 <div class="buffer"></div>
                 <i class="fa fa-calendar-check-o"></i> <input type="text" class="datepicker fieldset__input js__datepicker picker__input form-control" placeholder="Check in">
                 <div class="buffer"></div>
                 <i class="fa fa-calendar-times-o"></i> <input type="text" class="datepicker fieldset__input js__datepicker picker__input form-control" placeholder="Check out">
-              </div> <!-- end row -->
-              <div class="row-buffer"></div>
-              <div class="row">
                 <div class="buffer"></div>
                 Rooms: 
                 <select class="form-control">
@@ -96,17 +93,43 @@
                 </select>
                 <div class="buffer"></div>
                 Guests:
-                  <select class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
+                <select class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div> <!-- end row -->
+              <div class="row-buffer"></div>
+              <div class="row-fluid">
                 <div class="buffer"></div>
                 Rating: <i id="one-star-o" class="fa fa-star-o"></i><i id="two-stars-o" class="fa fa-star-o"></i><i id="three-stars-o" class="fa fa-star-o"></i><i id="four-stars-o" class="fa fa-star-o"></i><i id="five-stars-o" class="fa fa-star-o"></i>
                 <div class="buffer"></div>
-                <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                Amenities: 
+                <div class="checkbox-inline">
+                  <label>
+                    <input type="checkbox" value="">Pool
+                    <div class="buffer"></div>
+                    <input type="checkbox" value="">Gym
+                    <div class="buffer"></div>
+                    <input type="checkbox" value="">Free Wifi
+                  </label>
+                </div> <!-- end checkbox -->
+                <div class="buffer"></div>
+                Price per night:
+                <select class="form-control">
+                  <option>$100-$199</option>
+                  <option>$200-$299</option>
+                  <option>$300-$399</option>
+                  <option>$400 & up</option>
+                </select>
+                <div class="buffer"></div>
+                <div class="buffer"></div>
+                <div class="buffer"></div>
+                <div class="buffer"></div>
+                <div class="buffer"></div>
+                <button class="btn btn-primary"><i class="fa fa-search"> Search</i></button>
               </div> <!-- end row -->
             </div>
           </form>
