@@ -14,52 +14,28 @@ $(document).ready(function(){
   //   $('[data-toggle="tooltip"]').tooltip()
   // })
 
-  // Star ratings - This is very WET. Need to DRY.
-  // White stars to black
-  $("#one-star-o").on("click", function(oneBlackStar){
-    var oneBlackStar = $("<i>").attr("id", "one-star").addClass("fa fa-star");
-    $("#one-star-o").replaceWith($(oneBlackStar));
-  });
+  // Star ratings
+  function starRating(elementId){
+    $(elementId).on("click", function(){
+      var prevSiblings = $(this).prevAll();
+      console.log(prevSiblings);
+      var nextSiblings = $(this).nextAll();
+      $(this).removeClass("fa-star-o");
+      $(this).addClass("fa-star");
+      prevSiblings.removeClass("fa-star-o");
+      prevSiblings.addClass("fa-star");
+      nextSiblings.removeClass("fa-star");
+      nextSiblings.addClass("fa-star-o");
+    });
+  }
 
-  $("#two-stars-o").on("click", function(twoBlackStars){
-    var oneBlackStar = $("<i>").attr("id", "one-star").addClass("fa fa-star");
-    var twoBlackStars = $("<i>").attr("id", "two-stars").addClass("fa fa-star");
-    $("#one-star-o").replaceWith($(oneBlackStar));
-    $("#two-stars-o").replaceWith($(twoBlackStars));
-  });
+  starRating("#one-star-o");
+  starRating("#two-stars-o");
+  starRating("#three-stars-o");
+  starRating("#four-stars-o");
+  starRating("#five-stars-o");
 
-  $("#three-stars-o").on("click", function(threeBlackStars){
-    var oneBlackStar = $("<i>").attr("id", "one-star").addClass("fa fa-star");
-    var twoBlackStars = $("<i>").attr("id", "two-stars").addClass("fa fa-star");
-    var threeBlackStars = $("<i>").attr("id", "three-stars").addClass("fa fa-star");
-    $("#one-star-o").replaceWith($(oneBlackStar));
-    $("#two-stars-o").replaceWith($(twoBlackStars));
-    $("#three-stars-o").replaceWith($(threeBlackStars));
-  });
-
-  $("#four-stars-o").on("click", function(fourBlackStars){
-    var oneBlackStar = $("<i>").attr("id", "one-star").addClass("fa fa-star");
-    var twoBlackStars = $("<i>").attr("id", "two-stars").addClass("fa fa-star");
-    var threeBlackStars = $("<i>").attr("id", "three-stars").addClass("fa fa-star");
-    var fourBlackStars = $("<i>").attr("id", "four-stars").addClass("fa fa-star");
-    $("#one-star-o").replaceWith($(oneBlackStar));
-    $("#two-stars-o").replaceWith($(twoBlackStars));
-    $("#three-stars-o").replaceWith($(threeBlackStars));
-    $("#four-stars-o").replaceWith($(fourBlackStars));
-  });
-
-  $("#five-stars-o").on("click", function(fiveBlackStars){
-    var oneBlackStar = $("<i>").attr("id", "one-star").addClass("fa fa-star");
-    var twoBlackStars = $("<i>").attr("id", "two-stars").addClass("fa fa-star");
-    var threeBlackStars = $("<i>").attr("id", "three-stars").addClass("fa fa-star");
-    var fourBlackStars = $("<i>").attr("id", "four-stars").addClass("fa fa-star");
-    var fiveBlackStars = $("<i>").attr("id", "five-stars").addClass("fa fa-star");
-    $("#one-star-o").replaceWith($(oneBlackStar));
-    $("#two-stars-o").replaceWith($(twoBlackStars));
-    $("#three-stars-o").replaceWith($(threeBlackStars));
-    $("#four-stars-o").replaceWith($(fourBlackStars));
-    $("#five-stars-o").replaceWith($(fiveBlackStars));
-  });
+  // End star ratings
 
   $("#search-button").on("click", function(e){
     e.preventDefault();
@@ -83,7 +59,10 @@ $(document).ready(function(){
     placeholderLocation.append(locationInput);
     $(".listing").fadeIn(500);
 
-  }); // End #search-button click
+  }); 
+
+
+  // End #search-button click
 
   $("#location-input").on("focus", function() {
       $("#empty-field-msg").fadeOut(500);
@@ -98,6 +77,5 @@ $(document).ready(function(){
 });
 
 // TO DO LIST
-// Why doesn't search button work a second time?
 // DRY up Rating code
 // Allow user to change rating once set
