@@ -16,7 +16,7 @@ $(document).ready(function(){
 
   // Star ratings
   function starRating(elementId){
-    $(elementId).on("click", function(){
+    $(elementId).on("mouseover", function(){
       var prevSiblings = $(this).prevAll();
       console.log(prevSiblings);
       var nextSiblings = $(this).nextAll();
