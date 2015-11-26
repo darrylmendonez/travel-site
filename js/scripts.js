@@ -57,11 +57,13 @@ $(document).ready(function(){
     };
 
     // Value of locationInput gets placed in listing
+    $("#filter-row").hide();
+    $(".listing").hide();
     var placeholderLocation = $(".placeholder-location");
     placeholderLocation.replaceWith($("<span>").addClass("placeholder-location").append(locationInput));
     placeholderLocation.append(locationInput);
     $("#filter-row").fadeIn(500);
-    $(".listing").delay(500).fadeIn(1000);
+    $(".listing").delay(1000).fadeIn(2000);
 
     // Animate scroll to results
     $('html, body').animate({
