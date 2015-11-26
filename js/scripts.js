@@ -9,10 +9,10 @@ $(document).ready(function(){
   $(".datepicker").pickadate();
 
   // Tooltip Toggle
-  // Uncomment this once you get disabl
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  })
+  // Uncomment this once you get disabled button to work
+  // $(function () {
+  //   $('[data-toggle="tooltip"]').tooltip()
+  // })
 
   // Star ratings - This is very WET. Need to DRY.
   // White stars to black
