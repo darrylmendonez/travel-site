@@ -3,7 +3,6 @@ $(document).ready(function(){
   // Empty field msg and filter row
   $("#empty-field-msg").hide();
   $("#filter-row").hide();
-
   $(".listing").hide();
 
   // Datepicker for checkin and checkout
@@ -14,6 +13,9 @@ $(document).ready(function(){
   // $(function () {
   //   $('[data-toggle="tooltip"]').tooltip()
   // })
+
+  // Focus on #location-input
+  $("#location-input").focus();
 
   // Star ratings
   function starRating(elementId){
@@ -72,14 +74,23 @@ $(document).ready(function(){
 
   }); // End #search-button click
 
-  // Fade out empty field msg on mouseover
+  // Fade out empty field msg on mouseover, keypress, or focus
   $("#location-input").on("mouseover", function() {
+      $("#empty-field-msg").fadeOut(500);
+    });
+  $("#location-input").on("keypress", function() {
       $("#empty-field-msg").fadeOut(500);
     });
   $("#check-in").on("mouseover", function() {
       $("#empty-field-msg").fadeOut(500);
     });
+  $("#check-in").on("focus", function() {
+      $("#empty-field-msg").fadeOut(500);
+    });
   $("#check-out").on("mouseover", function() {
+      $("#empty-field-msg").fadeOut(500);
+    });
+  $("#check-out").on("focus", function() {
       $("#empty-field-msg").fadeOut(500);
     });
 
