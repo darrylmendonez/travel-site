@@ -61,19 +61,21 @@ $(document).ready(function(){
 
   $("#search-button").on("click", function(e){
     e.preventDefault();
-    var location = $("#location").val().trim();
+
+    var locationInput = $("#location").val().trim();
     var checkIn = $("#check-in").val().trim();
     var checkOut = $("#check-out").val().trim();
 
-    if (location === "" || checkIn === "" || checkOut === ""){
+    // console.log(locationInput+' '+checkIn+' '+checkOut)
+
+    if (locationInput === "" || checkIn === "" || checkOut === ""){
       $("#empty-field-msg").slideDown(500);
       return;
     };
 
     // Value of location gets placed in listing
     var placeholderLocation = $(".placeholder-location");
-    placeholderLocation.replaceWith($("<span>").append(location));
-
+    placeholderLocation.append(locationInput);
     $(".listing").fadeIn(500);
 
   }); // End #search-button click
