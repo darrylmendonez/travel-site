@@ -100,6 +100,8 @@
                   <option>4</option>
                   <option>5</option>
                 </select>
+          
+      <button type="button"></button>
               </div> <!-- end row -->
               <div class="row-buffer"></div>
               <div class="row-fluid">
@@ -131,20 +133,17 @@
                 <div class="buffer"></div>
                 <button type="submit" id="search-button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Enter required fields"><i class="fa fa-search"> Search</i></button>
                 <div id="empty-field-msg" class="alert alert-danger inline" role="alert">
-                  <p>Enter required fields</p>
+                  <p>Enter required fields</p> 
                 </div>
+                  <ul class="no-bullets">
+                    <li><a href = "#moreinfo" data-toggle="modal">More Info</a></li>
+                  </ul>
               </div> <!-- end row -->
               <div class="row-buffer"></div>
               <div class="row-fluid listing">
                 <div class="buffer"></div>
                 <img class="listing-img buffer img-responsive img-rounded" src="http://www.kayak.com/rimg/himg/3c/9e/9c/jetsetter-4069-prop-99993-1378911024-src-image.jpg" />
                 Hotel Mayfair in <span class="placeholder-location"></span>
-              </div> <!-- end row-fluid -->
-              <div class="row-buffer"></div>
-              <div class="row-fluid listing">
-                <div class="buffer"></div>
-                <img class="listing-img buffer img-responsive img-rounded" src="http://a2.r9cdn.net/h/run/api/image?url=/himg/e4/fa/71/jetsetter-5417-prop-46316-1425326577-src-image.jpg&width=200&height=200&crop=true" />
-                Golden Nugget <span class="placeholder-location"></span>
               </div> <!-- end row-fluid -->
               <div class="row-buffer"></div>
               <div class="row-fluid listing">
@@ -270,6 +269,34 @@
   <footer>
 
   </footer>
+
+ <aside class = "modal fade" id = "moreinfo" role = "dialog">
+    <div class = "modal-dialog">
+      <div class = "modal-content">
+        <div class = "modal-header">
+          <h4>More Information</h4>
+        </div>
+        <div class = "modal-body">
+        <p>
+          Please contact your hotel of interest directly for the following: <br>
+          <ul>
+            <li>Wheelchair rental and arrangements</li>
+            <li>Pet Policy</li>
+            <li>Special needs accomodation</li>
+          </ul>            
+        </p>
+        <p>For specific hotel directory or contact information you may also contact Booked customer service:</p>
+          <ul class="no-bullets">
+            <li class="u-email"><p><i class="fa fa-envelope"></i> Email: <a href ="mailto:support@booked.com" class="btn btn-email">support@booked.com</a></p></li>
+            <li><p><i class="fa fa-phone"></i> Call: 1-800-555-5555</p></li>
+          </ul>
+        </div>
+        <div class = "modal-footer">
+          <a class = "btn btn-default" data-dismiss = "modal">Close</a>
+        </div>
+      </div>
+    </div>
+  </aside>
   <aside class = "modal fade" id = "contact" role = "dialog">
     <div class = "modal-dialog">
       <div class = "modal-content">
