@@ -9,8 +9,10 @@ $(document).ready(function(){
   $(".datepicker").pickadate();
 
   // Tooltip Toggle
-  // Can't get this to work
-  // $("#search-button").tooltip();
+  // Uncomment this once you get disabled button to work
+  // $(function () {
+  //   $('[data-toggle="tooltip"]').tooltip()
+  // })
 
   // Star ratings - This is very WET. Need to DRY.
   // White stars to black
@@ -61,24 +63,29 @@ $(document).ready(function(){
 
   $("#search-button").on("click", function(e){
     e.preventDefault();
-    var location = $("#location").val().trim();
+    var locationInput = $("#location-input").val().trim();
     var checkIn = $("#check-in").val().trim();
     var checkOut = $("#check-out").val().trim();
 
-    if (location === "" || checkIn === "" || checkOut === ""){
+    // Check for empty fields
+    var locationInput = $("#location-input").val().trim();
+    var checkIn = $("#check-in").val().trim();
+    var checkOut = $("#check-out").val().trim();
+
+    if (locationInput === "" || checkIn === "" || checkOut === ""){
       $("#empty-field-msg").slideDown(500);
       return;
     };
 
-    // Value of location gets placed in listing
+    // Value of locationInput gets placed in listing
     var placeholderLocation = $(".placeholder-location");
-    placeholderLocation.replaceWith($("<span>").append(location));
-
+    placeholderLocation.replaceWith($("<span>").addClass("placeholder-location").append(locationInput));
+    placeholderLocation.append(locationInput);
     $(".listing").fadeIn(500);
 
   }); // End #search-button click
 
-  $("#location").on("focus", function() {
+  $("#location-input").on("focus", function() {
       $("#empty-field-msg").fadeOut(500);
     });
   $("#check-in").on("focus", function() {
@@ -89,3 +96,8 @@ $(document).ready(function(){
     });
 
 });
+
+// TO DO LIST
+// Why doesn't search button work a second time?
+// DRY up Rating code
+// Allow user to change rating once set
