@@ -68,6 +68,10 @@ $(document).ready(function(){
     var checkOut = $("#check-out").val().trim();
 
     // Check for empty fields
+    var locationInput = $("#location-input").val().trim();
+    var checkIn = $("#check-in").val().trim();
+    var checkOut = $("#check-out").val().trim();
+
     if (locationInput === "" || checkIn === "" || checkOut === ""){
       $("#empty-field-msg").slideDown(500);
       return;
@@ -75,8 +79,8 @@ $(document).ready(function(){
 
     // Value of locationInput gets placed in listing
     var placeholderLocation = $(".placeholder-location");
-    placeholderLocation.replaceWith($("<span>").append(locationInput));
-
+    placeholderLocation.replaceWith($("<span>").addClass("placeholder-location").append(locationInput));
+    placeholderLocation.append(locationInput);
     $(".listing").fadeIn(500);
 
   }); // End #search-button click
