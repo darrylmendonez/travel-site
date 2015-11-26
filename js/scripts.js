@@ -57,29 +57,29 @@ $(document).ready(function(){
     };
 
     // Value of locationInput gets placed in listing
+    $("#filter-row").hide();
+    $(".listing").hide();
     var placeholderLocation = $(".placeholder-location");
     placeholderLocation.replaceWith($("<span>").addClass("placeholder-location").append(locationInput));
     placeholderLocation.append(locationInput);
     $("#filter-row").fadeIn(500);
-    $(".listing").delay(500).fadeIn(1000);
+    $(".listing").delay(1000).fadeIn(2000);
 
     // Animate scroll to results
     $('html, body').animate({
       scrollTop: $("#filter-row").offset().top
     }, 2000);
 
-  }); 
+  }); // End #search-button click
 
-
-  // End #search-button click
-
-  $("#location-input").on("focus", function() {
+  // Fade out empty field msg on mouseover
+  $("#location-input").on("mouseover", function() {
       $("#empty-field-msg").fadeOut(500);
     });
-  $("#check-in").on("focus", function() {
+  $("#check-in").on("mouseover", function() {
       $("#empty-field-msg").fadeOut(500);
     });
-  $("#check-out").on("focus", function() {
+  $("#check-out").on("mouseover", function() {
       $("#empty-field-msg").fadeOut(500);
     });
 
