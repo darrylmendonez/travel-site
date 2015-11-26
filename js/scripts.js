@@ -1,7 +1,8 @@
 $(document).ready(function(){
 
-  // Empty field msg
+  // Empty field msg and filter row
   $("#empty-field-msg").hide();
+  $("#filter-row").hide();
 
   $(".listing").hide();
 
@@ -48,6 +49,8 @@ $(document).ready(function(){
     var checkIn = $("#check-in").val().trim();
     var checkOut = $("#check-out").val().trim();
 
+    var scrolled=0;
+
     if (locationInput === "" || checkIn === "" || checkOut === ""){
       $("#empty-field-msg").slideDown(500);
       return;
@@ -57,7 +60,13 @@ $(document).ready(function(){
     var placeholderLocation = $(".placeholder-location");
     placeholderLocation.replaceWith($("<span>").addClass("placeholder-location").append(locationInput));
     placeholderLocation.append(locationInput);
-    $(".listing").fadeIn(500);
+    $("#filter-row").fadeIn(500);
+    $(".listing").delay(500).fadeIn(1000);
+
+    // Animate scroll to results
+    $('html, body').animate({
+      scrollTop: $("#filter-row").offset().top
+    }, 2000);
 
   }); 
 
@@ -77,5 +86,3 @@ $(document).ready(function(){
 });
 
 // TO DO LIST
-// DRY up Rating code
-// Allow user to change rating once set
