@@ -101,9 +101,12 @@
                   <option>5</option>
                 </select>
                 <div class="buffer"></div>
-                <button type="submit" id="search-button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Enter required fields" href="#filter-row"><i class="fa fa-search"> Search</i></button>
+                <button type="submit" id="search-button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Enter required fields" href="#filter-row"><i class="fa fa-search"></i> Search</button>
                 <div id="empty-field-msg" class="alert alert-danger text-center" role="alert">
                   <p>Enter required fields</p>
+                </div>
+                <div id="loading" class="alert alert-warning text-center" role="alert">
+                  <p><i class="fa fa-cog fa-spin fa-2x"></i></p>
                 </div>
               </div> <!-- end row -->
               <div class="row-buffer"></div>
@@ -135,6 +138,8 @@
                   <option>$300-$399</option>
                   <option>$400 & up</option>
                 </select>
+                <div class="buffer"></div>
+                <button type="submit" id="filter-button" class="btn btn-primary">Filter</button>
               </div> <!-- end row -->
               <div class="row-buffer"></div>
               <div class="row-fluid listing">
