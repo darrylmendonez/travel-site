@@ -9,12 +9,6 @@ $(document).ready(function(){
   // Datepicker for checkin and checkout
   $(".datepicker").pickadate();
 
-  // Tooltip Toggle
-  // Uncomment this once you get disabled button to work
-  // $(function () {
-  //   $('[data-toggle="tooltip"]').tooltip()
-  // })
-
   // Focus on #location-input
   $("#location-input").focus();
 
@@ -80,23 +74,104 @@ $(document).ready(function(){
 
   // Fade out empty field msg on mouseover, keypress, or focus
   $("#location-input").on("mouseover", function() {
-      $("#empty-field-msg").fadeOut(500);
-    });
+    $("#empty-field-msg").fadeOut(500);
+  });
   $("#location-input").on("keypress", function() {
-      $("#empty-field-msg").fadeOut(500);
-    });
+    $("#empty-field-msg").fadeOut(500);
+  });
   $("#check-in").on("mouseover", function() {
-      $("#empty-field-msg").fadeOut(500);
-    });
+    $("#empty-field-msg").fadeOut(500);
+  });
   $("#check-in").on("focus", function() {
-      $("#empty-field-msg").fadeOut(500);
-    });
+    $("#empty-field-msg").fadeOut(500);
+  });
   $("#check-out").on("mouseover", function() {
-      $("#empty-field-msg").fadeOut(500);
-    });
+    $("#empty-field-msg").fadeOut(500);
+  });
   $("#check-out").on("focus", function() {
-      $("#empty-field-msg").fadeOut(500);
-    });
+    $("#empty-field-msg").fadeOut(500);
+  });
+
+  // Amenities Filter Function
+  // function amenities(){
+  //   if($("#pool-checkbox").is(':checked')){
+  //     $(".pool").fadeIn(2000);
+  //   };
+  //   if(($("#pool-checkbox").is(':checked') === false)){
+  //     $(".pool").fadeOut(2000);
+  //     console.log("class pool has been faded in");
+  //   };
+  //   if($("#gym-checkbox").is(':checked')){
+  //     $(".gym").fadeIn(2000);
+  //     console.log("class gym has been faded out");
+  //   }
+  //   if(($("#gym-checkbox").is(':checked') === false)){
+  //     $(".gym").fadeOut(2000);
+  //     console.log("class gym has been faded in");
+  //   };
+  //   if($("#gym-checkbox").is(':checked')){
+  //     $(".gym").fadeIn(2000);
+  //     console.log("class gym has been faded out");
+  //   }
+  //   if(($("#wifi-checkbox").is(':checked') === false)){
+  //     $(".wifi").fadeOut(2000);
+  //     console.log("class wifi has been faded in");
+  //   };
+  // };
+
+  $("#filter-button").on("click", function(e){
+    e.preventDefault();
+    var starsCount = $(".fa-star").length
+    // $("#loading-filter").fadeIn(500).delay(500).fadeOut(500);
+
+    switch(starsCount){
+      case 0: 
+        $(".one-star-rated").fadeIn(2000);
+        $(".two-star-rated").fadeIn(2000);
+        $(".three-star-rated").fadeIn(2000);
+        $(".four-star-rated").fadeIn(2000);
+        $(".five-star-rated").fadeIn(2000);
+        break;
+      case 1:
+        $(".one-star-rated").fadeIn(2000);
+        $(".two-star-rated").fadeIn(2000);
+        $(".three-star-rated").fadeIn(2000);
+        $(".four-star-rated").fadeIn(2000);
+        $(".five-star-rated").fadeIn(2000);
+        break;
+      case 2:
+        $(".one-star-rated").fadeOut(2000);
+        $(".two-star-rated").fadeIn(2000);
+        $(".three-star-rated").fadeIn(2000);
+        $(".four-star-rated").fadeIn(2000);
+        $(".five-star-rated").fadeIn(2000);
+        break;
+      case 3:
+        $(".one-star-rated").fadeOut(2000);
+        $(".two-star-rated").fadeOut(2000);
+        $(".three-star-rated").fadeIn(2000);
+        $(".four-star-rated").fadeIn(2000);
+        $(".five-star-rated").fadeIn(2000);
+        break;
+      case 4:
+        $(".one-star-rated").fadeOut(2000);
+        $(".two-star-rated").fadeOut(2000);
+        $(".three-star-rated").fadeOut(2000);
+        $(".four-star-rated").fadeIn(2000);
+        $(".five-star-rated").fadeIn(2000);
+        break;
+      case 5:
+        $(".one-star-rated").fadeOut(2000);
+        $(".two-star-rated").fadeOut(2000);
+        $(".three-star-rated").fadeOut(2000);
+        $(".four-star-rated").fadeOut(2000);
+        $(".five-star-rated").fadeIn(2000);
+        break;
+      default:
+        break;
+    }; //End Stars Filter
+
+  });
 
 });
 
