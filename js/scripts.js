@@ -3,8 +3,14 @@ $(document).ready(function(){
   // Empty field msg and filter row
   $("#empty-field-msg").hide();
   $("#filter-row").hide();
+<<<<<<< HEAD
   // $(".listing").hide();
   $("#loading-search").hide();
+=======
+  $(".listing").hide();
+  $("#loading-search").hide();
+  $("#loading-filter").hide();
+>>>>>>> a35d1a3c597c86527f909812bd8bc64e7dbf4a0c
 
   // Datepicker for checkin and checkout
   $(".datepicker").pickadate();
@@ -89,6 +95,7 @@ $(document).ready(function(){
     $("#empty-field-msg").fadeOut(500);
   });
 
+<<<<<<< HEAD
 
 
   var matchingResultsTotal = $(".listing:visible").length;
@@ -114,44 +121,67 @@ $(document).ready(function(){
   $("#filter-button").on("click", function(e){
     e.preventDefault();
     var starsCount = $(".fa-star").length
+=======
+  $("#filter-button").on("click", function(e){
+    e.preventDefault();
+    var starsCount = $(".fa-star").length
+    // $("#loading-filter").fadeIn(500).delay(500).fadeOut(500);
+>>>>>>> a35d1a3c597c86527f909812bd8bc64e7dbf4a0c
     switch(starsCount){
       case 1:
         $(".one-star-rated").fadeIn(2000);
         $(".two-star-rated").fadeIn(2000);
         $(".three-star-rated").fadeIn(2000);
         $(".four-star-rated").fadeIn(2000);
+<<<<<<< HEAD
         matchingResults();
+=======
+>>>>>>> a35d1a3c597c86527f909812bd8bc64e7dbf4a0c
         break;
       case 2:
         $(".one-star-rated").fadeOut(2000);
         $(".two-star-rated").fadeIn(2000);
         $(".three-star-rated").fadeIn(2000);
         $(".four-star-rated").fadeIn(2000);
+<<<<<<< HEAD
         matchingResults();
+=======
+>>>>>>> a35d1a3c597c86527f909812bd8bc64e7dbf4a0c
         break;
       case 3:
         $(".one-star-rated").fadeOut(2000);
         $(".two-star-rated").fadeOut(2000);
         $(".three-star-rated").fadeIn(2000);
         $(".four-star-rated").fadeIn(2000);
+<<<<<<< HEAD
         matchingResults();
+=======
+>>>>>>> a35d1a3c597c86527f909812bd8bc64e7dbf4a0c
         break;
       case 4:
         $(".one-star-rated").fadeOut(2000);
         $(".two-star-rated").fadeOut(2000);
         $(".three-star-rated").fadeOut(2000);
         $(".four-star-rated").fadeIn(2000);
+<<<<<<< HEAD
         matchingResults();
+=======
+>>>>>>> a35d1a3c597c86527f909812bd8bc64e7dbf4a0c
         break;
       case 5:
         $(".one-star-rated").fadeOut(2000);
         $(".two-star-rated").fadeOut(2000);
         $(".three-star-rated").fadeOut(2000);
         $(".four-star-rated").fadeOut(2000);
+<<<<<<< HEAD
         matchingResults();
         break;
       default:
         matchingResults();
+=======
+        break;
+      default:
+>>>>>>> a35d1a3c597c86527f909812bd8bc64e7dbf4a0c
         break;
     };
   });
