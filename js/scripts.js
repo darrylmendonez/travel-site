@@ -4,7 +4,8 @@ $(document).ready(function(){
   $("#empty-field-msg").hide();
   $("#filter-row").hide();
   $(".listing").hide();
-  $("#loading").hide();
+  $("#loading-search").hide();
+  $("#loading-filter").hide();
 
   // Datepicker for checkin and checkout
   $(".datepicker").pickadate();
@@ -58,7 +59,7 @@ $(document).ready(function(){
     var placeholderLocation = $(".placeholder-location");
     placeholderLocation.replaceWith($("<span>").addClass("placeholder-location").append(locationInput));
     placeholderLocation.append(locationInput);
-    $("#loading").fadeIn(500).delay(1000).fadeOut(500);
+    $("#loading-search").fadeIn(500).delay(1000).fadeOut(500);
     $("#filter-row").delay(2000).fadeIn(500, function(){
       $('html, body').animate({
         scrollTop: $("#filter-row").offset().top
@@ -93,8 +94,41 @@ $(document).ready(function(){
 
   $("#filter-button").on("click", function(e){
     e.preventDefault();
-    if($('.listing').hasClass("four-star-rated")){
-      $(".four-star-rated").fadeOut(2000);
+    var starsCount = $(".fa-star").length
+    // $("#loading-filter").fadeIn(500).delay(500).fadeOut(500);
+    switch(starsCount){
+      case 1:
+        $(".one-star-rated").fadeIn(2000);
+        $(".two-star-rated").fadeIn(2000);
+        $(".three-star-rated").fadeIn(2000);
+        $(".four-star-rated").fadeIn(2000);
+        break;
+      case 2:
+        $(".one-star-rated").fadeOut(2000);
+        $(".two-star-rated").fadeIn(2000);
+        $(".three-star-rated").fadeIn(2000);
+        $(".four-star-rated").fadeIn(2000);
+        break;
+      case 3:
+        $(".one-star-rated").fadeOut(2000);
+        $(".two-star-rated").fadeOut(2000);
+        $(".three-star-rated").fadeIn(2000);
+        $(".four-star-rated").fadeIn(2000);
+        break;
+      case 4:
+        $(".one-star-rated").fadeOut(2000);
+        $(".two-star-rated").fadeOut(2000);
+        $(".three-star-rated").fadeOut(2000);
+        $(".four-star-rated").fadeIn(2000);
+        break;
+      case 5:
+        $(".one-star-rated").fadeOut(2000);
+        $(".two-star-rated").fadeOut(2000);
+        $(".three-star-rated").fadeOut(2000);
+        $(".four-star-rated").fadeOut(2000);
+        break;
+      default:
+        break;
     };
   });
 
