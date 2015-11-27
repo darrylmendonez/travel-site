@@ -9,12 +9,6 @@ $(document).ready(function(){
   // Datepicker for checkin and checkout
   $(".datepicker").pickadate();
 
-  // Tooltip Toggle
-  // Uncomment this once you get disabled button to work
-  // $(function () {
-  //   $('[data-toggle="tooltip"]').tooltip()
-  // })
-
   // Focus on #location-input
   $("#location-input").focus();
 
@@ -22,7 +16,6 @@ $(document).ready(function(){
   function starRating(elementId){
     $(elementId).on("mouseover", function(){
       var prevSiblings = $(this).prevAll();
-      console.log(prevSiblings);
       var nextSiblings = $(this).nextAll();
       $(this).removeClass("fa-star-o");
       $(this).addClass("fa-star");
@@ -80,23 +73,30 @@ $(document).ready(function(){
 
   // Fade out empty field msg on mouseover, keypress, or focus
   $("#location-input").on("mouseover", function() {
-      $("#empty-field-msg").fadeOut(500);
-    });
+    $("#empty-field-msg").fadeOut(500);
+  });
   $("#location-input").on("keypress", function() {
-      $("#empty-field-msg").fadeOut(500);
-    });
+    $("#empty-field-msg").fadeOut(500);
+  });
   $("#check-in").on("mouseover", function() {
-      $("#empty-field-msg").fadeOut(500);
-    });
+    $("#empty-field-msg").fadeOut(500);
+  });
   $("#check-in").on("focus", function() {
-      $("#empty-field-msg").fadeOut(500);
-    });
+    $("#empty-field-msg").fadeOut(500);
+  });
   $("#check-out").on("mouseover", function() {
-      $("#empty-field-msg").fadeOut(500);
-    });
+    $("#empty-field-msg").fadeOut(500);
+  });
   $("#check-out").on("focus", function() {
-      $("#empty-field-msg").fadeOut(500);
-    });
+    $("#empty-field-msg").fadeOut(500);
+  });
+
+  $("#filter-button").on("click", function(e){
+    e.preventDefault();
+    if($('.listing').hasClass("four-star-rated")){
+      $(".four-star-rated").fadeOut(2000);
+    };
+  });
 
 });
 
