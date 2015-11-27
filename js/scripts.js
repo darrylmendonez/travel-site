@@ -14,8 +14,8 @@ $(document).ready(function(){
   $("#location-input").focus();
 
   // Star ratings
-  function starRating(elementId){
-    $(elementId).on("mouseover", function(){
+  function starRating(elementClass){
+    $(elementClass).on("mouseover", function(){
       var prevSiblings = $(this).prevAll();
       var nextSiblings = $(this).nextAll();
       $(this).removeClass("fa-star-o");
@@ -92,6 +92,27 @@ $(document).ready(function(){
     $("#empty-field-msg").fadeOut(500);
   });
 
+  // Amenities Filter Function
+  function amenities(){
+    if($("#pool-checkbox").is(':checked') && ($(".listing").is(':visible'))){
+      $(".pool").fadeOut(2000);
+      console.log("class pool has been faded out");
+    } else {
+      $(".pool").fadeIn(2000);
+      console.log("class pool has been faded in");
+    };
+  };
+
+
+      // var prevSiblings = $(this).prevAll();
+      // var nextSiblings = $(this).nextAll();
+      // $(this).removeClass("fa-star-o");
+      // $(this).addClass("fa-star");
+      // prevSiblings.removeClass("fa-star-o");
+      // prevSiblings.addClass("fa-star");
+      // nextSiblings.removeClass("fa-star");
+      // nextSiblings.addClass("fa-star-o");
+
   $("#filter-button").on("click", function(e){
     e.preventDefault();
     var starsCount = $(".fa-star").length
@@ -102,6 +123,7 @@ $(document).ready(function(){
         $(".two-star-rated").fadeIn(2000);
         $(".three-star-rated").fadeIn(2000);
         $(".four-star-rated").fadeIn(2000);
+        amenities();
         break;
       case 2:
         $(".one-star-rated").fadeOut(2000);
@@ -126,8 +148,11 @@ $(document).ready(function(){
         $(".two-star-rated").fadeOut(2000);
         $(".three-star-rated").fadeOut(2000);
         $(".four-star-rated").fadeOut(2000);
+        console.log(("#five-star-rated").length);
+        amenities();
         break;
       default:
+        amenities();
         break;
     };
   });
