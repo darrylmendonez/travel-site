@@ -25,471 +25,488 @@
   </nav>
   <main class="container">
     <div class="row">
-      <div id="main-carousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
-          <li data-target="#main-carousel" data-slide-to="1"></li>
-          <li data-target="#main-carousel" data-slide-to="2"></li>
-        </ol>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-          <div class="item active">
-            <img src="carousel/asia.jpg" alt="Asia">
-              <div class="carousel-caption">
-                <h3 class="white-text">Asia</h3>
-            </div>
-            <div class="carousel-responsive">
-
-            </div>
-          </div>
-          <div class="item">
-            <img src="carousel/berlin.jpg" alt="Berlin">
-              <div class="carousel-caption">
-              <h3 class="white-text">Berlin</h3>
-            </div>
-          <div class="carousel-responsive">
-            </div>
-          </div>
-          <div class="item">
-            <img src="carousel/paris.jpg" alt="Paris">
-              <div class="carousel-caption">
-              <h3 class="white-text">Paris</h3>
-            </div>
-            <div class="carousel-responsive">
-          </div>
-        </div>
-        <!-- Controls -->
-        <a class="carousel-control left" href="#main-carousel" data-slide="prev">
-          <span class="icon-prev"></span> 
-        </a>
-        <a class="right carousel-control" href="#main-carousel" data-slide="next">
-          <span class="icon-next"></span>
-        </a>
-      </div> <!-- End main-carousel -->
-    </div> <!-- End carousel row -->
-  <div class="row">
-    <div class="col-md-12">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          Hotels <i class="fa fa-bed"></i>       
-        </div>
-        <div class="panel-body">
-          <form class="form-horizontal form-inline">
-            <div class="form-group">
-              <div class="row">
-                <div class="buffer"></div>
-                <i class="fa fa-globe"></i> <input id="location-input" type="text" class="form-control" placeholder="Where"><span class="red-text">*</span>
-                <div class="buffer"></div>
-                <i class="fa fa-calendar-check-o"></i> <input id="check-in" type="text" class="datepicker fieldset__input js__datepicker picker__input form-control" placeholder="Check in"><span class="red-text">*</span>
-                <div class="buffer"></div>
-                <i class="fa fa-calendar-times-o"></i> <input id="check-out" type="text" class="datepicker fieldset__input js__datepicker picker__input form-control" placeholder="Check out"><span class="red-text">*</span>
-                <div class="buffer"></div>
-                Rooms: 
-                <select class="form-control">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                </select>
-                <div class="buffer"></div>
-                Guests:
-                <select class="form-control">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
-                <div class="buffer"></div>
-                <button type="submit" id="search-button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Enter required fields" href="#filter-row"><i class="fa fa-search"></i> Search</button>
-                <div id="empty-field-msg" class="alert alert-danger text-center" role="alert">
-                  <p>Enter required fields</p>
-                </div>
-                <div id="loading-search" class="alert alert-warning text-center" role="alert">
-                  <p><i class="fa fa-cog fa-spin fa-2x"></i></p>
-                </div>
-              </div> <!-- end row -->
-              <div class="row-buffer"></div>
-              <div id="filter-row" class="row">
-                <div class="buffer"></div>
-                <h4 class="inline">Filter Results</h4>
-                <div class="buffer"></div>
-                Rating: 
-                <span>
-                  <i id="one-star-o" class="fa fa-star-o"></i><i id="two-stars-o" class="fa fa-star-o"></i><i id="three-stars-o" class="fa fa-star-o"></i><i id="four-stars-o" class="fa fa-star-o"></i><i id="five-stars-o" class="fa fa-star-o"></i>
-                </span>
-                <div class="buffer"></div>
-                Amenities: 
-                <div class="checkbox-inline">
-                  <label>
-                    <input type="checkbox" value="">Pool
-                    <div class="buffer"></div>
-                    <input type="checkbox" value="">Gym
-                    <div class="buffer"></div>
-                    <input type="checkbox" value="">Free Wifi
-                  </label>
-                </div> <!-- end checkbox -->
-                <div class="buffer"></div>
-                Price per night:
-                <select class="form-control">
-                  <option>Any</option>
-                  <option>$100-$199</option>
-                  <option>$200-$299</option>
-                  <option>$300-$399</option>
-                  <option>$400 & up</option>
-                </select>
-                <div class="buffer"></div>
-                <button type="submit" id="filter-button" class="btn btn-primary">Filter</button>
-              </div> <!-- end row -->
-              <div class="row-buffer"></div>
-              <div class="row">
-                <div class="buffer"></div>
-                <h4 class="inline">Matching Results: <span id="matching-results-placeholder"></span></h4>
-                
-                
+      <div class="col-md-12">
+        <div id="main-carousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#main-carousel" data-slide-to="1"></li>
+            <li data-target="#main-carousel" data-slide-to="2"></li>
+          </ol>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="carousel/asia.jpg" alt="Asia">
+                <div class="carousel-caption">
+                  <h3 class="white-text">Asia</h3>
               </div>
-              <div class="row-buffer"></div>
-              <div class="row listing one-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="http://www.kayak.com/rimg/himg/3c/9e/9c/jetsetter-4069-prop-99993-1378911024-src-image.jpg?crop=true&height=242&width=509" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Hotel Mayfair Inn in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+              <div class="carousel-responsive">
 
-              <div class="row-buffer"></div>
-              <div class="row listing two-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="http://a3.r9cdn.net/h/run/api/image?url=/kimg/86/49/dd051d0a-54c952ae.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Comfort Inn in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
+              </div>
+            </div>
+            <div class="item">
+              <img src="carousel/berlin.jpg" alt="Berlin">
+                <div class="carousel-caption">
+                <h3 class="white-text">Berlin</h3>
+              </div>
+            <div class="carousel-responsive">
+              </div>
+            </div>
+            <div class="item">
+              <img src="carousel/paris.jpg" alt="Paris">
+                <div class="carousel-caption">
+                <h3 class="white-text">Paris</h3>
+              </div>
+              <div class="carousel-responsive">
+            </div>
+          </div>
+          <!-- Controls -->
+          <a class="carousel-control left" href="#main-carousel" data-slide="prev">
+            <span class="icon-prev"></span> 
+          </a>
+          <a class="right carousel-control" href="#main-carousel" data-slide="next">
+            <span class="icon-next"></span>
+          </a>
+        </div> <!-- End main-carousel -->
+      </div> <!-- End col-md-12 -->
+    </div> <!-- End carousel row -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            Hotels <i class="fa fa-bed"></i>       
+          </div>
+          <div class="panel-body">
+            <form class="form-horizontal form-inline">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="buffer"></div>
+                    <i class="fa fa-globe"></i> <input id="location-input" type="text" class="form-control" placeholder="Where"><span class="red-text">*</span>
+                  </div>
+                  <div class="col-md-3">
+                    <i class="fa fa-calendar-check-o"></i> <input id="check-in" type="text" class="datepicker fieldset__input js__datepicker picker__input form-control" placeholder="Check in"><span class="red-text">*</span>
+                  </div>
+                  <div class="col-md-3">
+                    <i class="fa fa-calendar-times-o"></i> <input id="check-out" type="text" class="datepicker fieldset__input js__datepicker picker__input form-control" placeholder="Check out"><span class="red-text">*</span>
+                  </div>
+                  <div class="col-md-1">
+                    Rooms: 
+                    <select class="form-control">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </div>
+                  <div class="col-md-1">
+                    Guests:
+                    <select class="form-control">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div class="col-md-1">
+                    <button type="submit" id="search-button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Enter required fields" href="#filter-row"><i class="fa fa-search"></i> Search</button>
+                  </div>
+                </div> <!-- end row -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <div id="empty-field-msg" class="alert alert-danger text-center" role="alert">
+                      <p>Enter required fields</p>
+                    </div>
+                    <div id="loading-search" class="alert alert-warning text-center" role="alert">
+                      <p><i class="fa fa-cog fa-spin fa-2x"></i></p>
+                    </div>
+                  </div>
+                </div> <!-- end alert msgs row -->
+                <div class="row-buffer"></div>
+                <div id="filter-row" class="row">
+                  
+                  <div class="col-md-2">
+                    <div class="buffer"></div>
+                    <h4 class="inline">Filter Results</h4>
+                  </div>
+                  <div class="col-md-2">
+                    Rating: 
+                    <span>
+                      <i id="one-star-o" class="fa fa-star-o"></i><i id="two-stars-o" class="fa fa-star-o"></i><i id="three-stars-o" class="fa fa-star-o"></i><i id="four-stars-o" class="fa fa-star-o"></i><i id="five-stars-o" class="fa fa-star-o"></i>
+                    </span>
+                  </div>
+                  <div class="col-md-4">
+                    Amenities: 
+                    <div class="checkbox-inline">
+                      <label>
+                        <input type="checkbox" value="">Pool
+                        <div class="buffer"></div>
+                        <input type="checkbox" value="">Gym
+                        <div class="buffer"></div>
+                        <input type="checkbox" value="">Free Wifi
+                      </label>
+                    </div> <!-- end checkbox -->
+                  </div>
+                  <div class="col-md-3">
+                    Price per night:
+                    <select class="form-control">
+                      <option>Any</option>
+                      <option>$100-$199</option>
+                      <option>$200-$299</option>
+                      <option>$300-$399</option>
+                      <option>$400 & up</option>
+                    </select>
+                    </div>
+                  <div class="col-md-1">
+                    <button type="submit" id="filter-button" class="btn btn-primary">Filter</button>
+                  </div>
+                </div> <!-- end row -->
+                <!-- <div class="row-buffer"></div>
+                <div class="row">
+                  <div class="buffer"></div>
+                  <h4 class="inline">Matching Results: <span id="matching-results-placeholder"></span></h4>
+                </div> -->
+                <div class="row-buffer"></div>
+                <div class="row listing one-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="http://www.kayak.com/rimg/himg/3c/9e/9c/jetsetter-4069-prop-99993-1378911024-src-image.jpg?crop=true&height=242&width=509" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Hotel Mayfair Inn in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
                   <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing three-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="https://a2.r9cdn.net/h/run/api/image?url=/himg/3a/1a/ac/ice-4199-photo.aspx_did=2692_brochureid=4199_publicid=8904677_instanceid=33-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline"> Sheraton Hotel in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing two-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="http://a3.r9cdn.net/h/run/api/image?url=/kimg/86/49/dd051d0a-54c952ae.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Comfort Inn in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing four-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="https://a1.r9cdn.net/h/run/api/image?url=/himg/e2/1d/79/leonardo-1081438-Exterior_S-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Four Seasons Hotel in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing three-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="https://a2.r9cdn.net/h/run/api/image?url=/himg/3a/1a/ac/ice-4199-photo.aspx_did=2692_brochureid=4199_publicid=8904677_instanceid=33-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline"> Sheraton Hotel in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing five-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="https://a3.r9cdn.net/h/run/api/image?url=/himg/f1/32/07/leonardo-1067879-NYCDTDT_DTM-Guestroom-Dbl.Dbl-Day(3)_S-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Double Tree Hotel in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing four-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="https://a1.r9cdn.net/h/run/api/image?url=/himg/e2/1d/79/leonardo-1081438-Exterior_S-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Four Seasons Hotel in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing one-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="https://a1.r9cdn.net/h/run/api/image?url=/himg/bb/78/66/leonardo-1078531-EWRHI_3992022284_1540226657_S-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Holiday Inn in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing five-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="https://a3.r9cdn.net/h/run/api/image?url=/himg/f1/32/07/leonardo-1067879-NYCDTDT_DTM-Guestroom-Dbl.Dbl-Day(3)_S-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Double Tree Hotel in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing two-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="https://a1.r9cdn.net/h/run/api/image?url=/himg/60/84/e9/leonardo-1070715-Junior_suite_S-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Hilton Hotel in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing one-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="https://a1.r9cdn.net/h/run/api/image?url=/himg/bb/78/66/leonardo-1078531-EWRHI_3992022284_1540226657_S-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Holiday Inn in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing three-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="https://a2.r9cdn.net/h/run/api/image?url=/himg/d5/70/89/ice-3836-photo.aspx_did=2692_brochureid=3836_publicid=8890291_instanceid=61-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">The Westin in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing two-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="https://a1.r9cdn.net/h/run/api/image?url=/himg/60/84/e9/leonardo-1070715-Junior_suite_S-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Hilton Hotel in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing four-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="https://a2.r9cdn.net/h/run/api/image?url=/himg/0a/7b/c3/leonardo-1059065-10017026_img_pho_001_nc__01_Exterior___R-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Embassy Suites by Hilton in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing three-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="https://a2.r9cdn.net/h/run/api/image?url=/himg/d5/70/89/ice-3836-photo.aspx_did=2692_brochureid=3836_publicid=8890291_instanceid=61-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">The Westin in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing five-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="https://a1.r9cdn.net/h/run/api/image?url=/himg/0f/e0/33/ice-49662-photo.aspx_did=2692_brochureid=49662_publicid=12189410_instanceid=8-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Hyatt Regency in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing four-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="https://a2.r9cdn.net/h/run/api/image?url=/himg/0a/7b/c3/leonardo-1059065-10017026_img_pho_001_nc__01_Exterior___R-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Embassy Suites by Hilton in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing one-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="https://a2.r9cdn.net/h/run/api/image?url=/himg/d7/72/db/leonardo-1068673-MDWAHGI_Exterior8835_S-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Hilton Garden Inn in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing five-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="https://a1.r9cdn.net/h/run/api/image?url=/himg/0f/e0/33/ice-49662-photo.aspx_did=2692_brochureid=49662_publicid=12189410_instanceid=8-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Hyatt Regency in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing two-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="https://a3.r9cdn.net/h/run/api/image?url=/himg/26/21/de/leonardo-1050521-10007173_img_pho_000_nc__Exterior___S-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Radisson Suite Hotel in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing one-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="https://a2.r9cdn.net/h/run/api/image?url=/himg/d7/72/db/leonardo-1068673-MDWAHGI_Exterior8835_S-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Hilton Garden Inn in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing three-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="http://a1.r9cdn.net/h/run/api/image?url=/himg/6d/c1/34/leonardo-1071374-ATLSMHX_SR1_8645_S-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Hompton Inn in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing two-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="https://a3.r9cdn.net/h/run/api/image?url=/himg/26/21/de/leonardo-1050521-10007173_img_pho_000_nc__Exterior___S-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Radisson Suite Hotel in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing four-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="https://a2.r9cdn.net/h/run/api/image?url=/himg/a7/be/f2/leonardo-1086504-Guest_Room_1_031114_D_R-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">La Quinta Inn & Suites in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing three-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="http://a1.r9cdn.net/h/run/api/image?url=/himg/6d/c1/34/leonardo-1071374-ATLSMHX_SR1_8645_S-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Hompton Inn in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing five-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="https://a2.r9cdn.net/h/run/api/image?url=/himg/fe/af/ce/leonardo-1051530-9801_exterior2_2048x1536__S-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Extended Stay America in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing four-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="https://a2.r9cdn.net/h/run/api/image?url=/himg/a7/be/f2/leonardo-1086504-Guest_Room_1_031114_D_R-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">La Quinta Inn & Suites in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing one-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="https://a2.r9cdn.net/h/run/api/image?url=/himg/2a/98/ff/ice-46786-photo.aspx_did=2692_brochureid=46786_publicid=10830659_instanceid=14-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Best Western in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing five-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="https://a2.r9cdn.net/h/run/api/image?url=/himg/fe/af/ce/leonardo-1051530-9801_exterior2_2048x1536__S-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Extended Stay America in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing two-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="http://www.kayak.com/rimg/kimg/70/78/4646281c-151162234f7.jpg?crop=true&height=242&width=509" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Courtyard By Marriott in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing one-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="https://a2.r9cdn.net/h/run/api/image?url=/himg/2a/98/ff/ice-46786-photo.aspx_did=2692_brochureid=46786_publicid=10830659_instanceid=14-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Best Western in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing three-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="https://a1.r9cdn.net/h/run/api/image?url=/himg/02/49/b0/ice-50104-photo.aspx_did=2692_brochureid=50104_publicid=10407287_instanceid=4-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Hyatt Place in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing two-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="http://www.kayak.com/rimg/kimg/70/78/4646281c-151162234f7.jpg?crop=true&height=242&width=509" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Courtyard By Marriott in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing four-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="https://a3.r9cdn.net/h/run/api/image?url=/himg/ca/c3/f8/leonardo-1066183-WELCM_EFEA_14_S-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Holiday Inn Express & Suites in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing three-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="https://a1.r9cdn.net/h/run/api/image?url=/himg/02/49/b0/ice-50104-photo.aspx_did=2692_brochureid=50104_publicid=10407287_instanceid=4-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Hyatt Place in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing five-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="https://a1.r9cdn.net/h/run/api/image?url=/himg/df/67/3c/ice-49967-photo.aspx_did=2692_brochureid=49967_publicid=10423738_instanceid=4-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Hyatt House in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing four-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="https://a3.r9cdn.net/h/run/api/image?url=/himg/ca/c3/f8/leonardo-1066183-WELCM_EFEA_14_S-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Holiday Inn Express & Suites in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-              <div class="row-buffer"></div>
-              <div class="row listing one-star-rated">
-                <div class="col-md-3">
-                  <img class="listing-img buffer img-responsive img-rounded" src="https://a2.r9cdn.net/h/run/api/image?url=/himg/fb/43/bc/leonardo-1050511-HOUCP_967639677_6582283026_S-image.jpg&width=200&height=200&crop=true" />
-                </div>
-                <div class="col-md-3">
-                  <h4 class="inline">Crown Plaza in <span class="placeholder-location"></span></h4>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
-                </div>
-                <div class="col-md-3">
-                  <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
-                </div>
-              </div> <!-- end row -->
+                <div class="row-buffer"></div>
+                <div class="row listing five-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="https://a1.r9cdn.net/h/run/api/image?url=/himg/df/67/3c/ice-49967-photo.aspx_did=2692_brochureid=49967_publicid=10423738_instanceid=4-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Hyatt House in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
 
-
-            </div> <!-- end form-group -->
-          </form>
-      </div>
-    </div>
-  </div>
+                <div class="row-buffer"></div>
+                <div class="row listing one-star-rated">
+                  <div class="col-md-3">
+                    <img class="listing-img buffer img-responsive img-rounded" src="https://a2.r9cdn.net/h/run/api/image?url=/himg/fb/43/bc/leonardo-1050511-HOUCP_967639677_6582283026_S-image.jpg&width=200&height=200&crop=true" />
+                  </div>
+                  <div class="col-md-3">
+                    <h4 class="inline">Crown Plaza in <span class="placeholder-location"></span></h4>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary" type="button" href="#more-info" data-toggle="modal"><i class="fa fa-info-circle"></i> More info</button>
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-success" type="button" href="#booked" data-toggle="modal"><i class="fa fa-bed"></i> Book Now</button>
+                  </div>
+                </div> <!-- end row -->
+              </div> <!-- end form-group -->
+            </form>
+          </div> <!-- end panel-body -->
+        </div> <!-- end panel panel-primary -->
+      </div> <!-- end col-md-12 -->
+    </div> <!-- end row -->
   <footer>
 
   </footer>
