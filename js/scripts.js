@@ -4,6 +4,7 @@ $(document).ready(function(){
   $("#empty-field-msg").hide();
   $("#filter-row").hide();
   $(".listing").hide();
+  $("#loading").hide();
 
   // Datepicker for checkin and checkout
   $(".datepicker").pickadate();
@@ -64,13 +65,16 @@ $(document).ready(function(){
     var placeholderLocation = $(".placeholder-location");
     placeholderLocation.replaceWith($("<span>").addClass("placeholder-location").append(locationInput));
     placeholderLocation.append(locationInput);
-    $("#filter-row").fadeIn(500);
-    $(".listing").delay(1000).fadeIn(2000);
+    $("#loading").fadeIn(500).delay(1000).fadeOut(500);
+    $("#filter-row").delay(2000).fadeIn(500, function(){
+      $('html, body').animate({
+        scrollTop: $("#filter-row").offset().top
+      }, 2000);
+    });
+    $(".listing").delay(2500).fadeIn(2000);
 
     // Animate scroll to results
-    $('html, body').animate({
-      scrollTop: $("#filter-row").offset().top
-    }, 2000);
+    
 
   }); // End #search-button click
 
