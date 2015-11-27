@@ -97,21 +97,11 @@ $(document).ready(function(){
     if($("#pool-checkbox").is(':checked') && ($(".listing").is(':visible'))){
       $(".pool").fadeOut(2000);
       console.log("class pool has been faded out");
-    } else {
+    } else if(($("#pool-checkbox").is(':checked') === false) && ($(".listing").is(':visible'))){
       $(".pool").fadeIn(2000);
       console.log("class pool has been faded in");
     };
   };
-
-
-      // var prevSiblings = $(this).prevAll();
-      // var nextSiblings = $(this).nextAll();
-      // $(this).removeClass("fa-star-o");
-      // $(this).addClass("fa-star");
-      // prevSiblings.removeClass("fa-star-o");
-      // prevSiblings.addClass("fa-star");
-      // nextSiblings.removeClass("fa-star");
-      // nextSiblings.addClass("fa-star-o");
 
   $("#filter-button").on("click", function(e){
     e.preventDefault();
@@ -119,37 +109,40 @@ $(document).ready(function(){
     // $("#loading-filter").fadeIn(500).delay(500).fadeOut(500);
     switch(starsCount){
       case 1:
+        amenities();
         $(".one-star-rated").fadeIn(2000);
         $(".two-star-rated").fadeIn(2000);
         $(".three-star-rated").fadeIn(2000);
         $(".four-star-rated").fadeIn(2000);
-        amenities();
         break;
       case 2:
+        amenities();
         $(".one-star-rated").fadeOut(2000);
         $(".two-star-rated").fadeIn(2000);
         $(".three-star-rated").fadeIn(2000);
         $(".four-star-rated").fadeIn(2000);
         break;
       case 3:
+        amenities();
         $(".one-star-rated").fadeOut(2000);
         $(".two-star-rated").fadeOut(2000);
         $(".three-star-rated").fadeIn(2000);
         $(".four-star-rated").fadeIn(2000);
         break;
       case 4:
+        amenities();
         $(".one-star-rated").fadeOut(2000);
         $(".two-star-rated").fadeOut(2000);
         $(".three-star-rated").fadeOut(2000);
         $(".four-star-rated").fadeIn(2000);
         break;
       case 5:
+        amenities();
         $(".one-star-rated").fadeOut(2000);
         $(".two-star-rated").fadeOut(2000);
         $(".three-star-rated").fadeOut(2000);
         $(".four-star-rated").fadeOut(2000);
         console.log(("#five-star-rated").length);
-        amenities();
         break;
       default:
         amenities();
