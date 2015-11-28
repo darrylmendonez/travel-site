@@ -85,7 +85,10 @@ $(document).ready(function(){
   $("#filter-button").on("click", function(e){
     e.preventDefault();
     var starsCount = $(".fa-star").length
+    var numberOfBlackStars = $("#number-of-black-stars");
+    var h4 = $("<h4>");
 
+    // Selecting number of stars
     switch(starsCount){
       case 1:
         $(".one-star-rated").fadeIn(2000);
@@ -121,9 +124,23 @@ $(document).ready(function(){
         break;
     };
 
-    var numberOfBlackStars = $("#number-of-black-stars");
-    var h4TextCenter = $("<h4>").addClass("text-center");
-    numberOfBlackStars.replaceWith($("<span>").attr("id", "number-of-black-stars").append(h4TextCenter).append("Showing listings for " + starsCount + " stars and up"));
+    // Display msg for "Showing Listings for # of stars"
+    function oneStar (){
+      numberOfBlackStars.replaceWith($("<h4>").attr("id", "number-of-black-stars").append(h4).append("Showing listings for " + starsCount + " star and up"));
+    };
+    function twoToFourStars (){
+      numberOfBlackStars.replaceWith($("<h4>").attr("id", "number-of-black-stars").append(h4).append("Showing listings for " + starsCount + " stars and up"));
+    };
+    function fiveStars (){
+      numberOfBlackStars.replaceWith($("<h4>").attr("id", "number-of-black-stars").append(h4).append("Showing listings for " + starsCount + " stars"));
+    };
+    if (starsCount === 1){
+      oneStar();
+    } else if (starsCount === 5){
+      fiveStars();
+    } else {
+      twoToFourStars();
+    }
 
   });
 
