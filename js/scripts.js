@@ -155,6 +155,13 @@ $(document).ready(function(){
     $("#remove-row-button").on("click", function(f){
       currentRow.fadeOut(2000);
     });
+    var placeholderDetails = $("#placeholder-details");
+    var hotelName = $(this).parent().prev().text();
+    var checkIn = $("#check-in").val().trim();
+    var checkOut = $("#check-out").val().trim();
+    console.log(hotelName);
+    placeholderDetails.replaceWith($("<span>").addClass("placeholder-details").append("<p>").append("You are staying in the " + hotelName + "<br> from " + checkIn + "<br> to " + checkOut));
+    
   });
 
 });
