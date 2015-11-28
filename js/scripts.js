@@ -82,26 +82,6 @@ $(document).ready(function(){
     $("#empty-field-msg").fadeOut(500);
   });
 
-  // var matchingResultsTotal = $(".listing:visible").length;
-  // console.log("matchingResultsTotal = " + matchingResultsTotal)
-  // function matchingResults(){
-  //   console.log("matchingResultsTotal = " + matchingResultsTotal)
-  //   $("#matching-results-placeholder").replaceWith($("<span>").attr("id", "matching-results-placeholder").append(matchingResultsTotal));
-  // };
-
-
-
-  // Amenities Filter Function
-  // function amenities(){
-  //   if($("#pool-checkbox").is(':checked') && ($(".listing").is(':visible'))){
-  //     $(".pool").fadeOut(2000);
-  //     console.log("class pool has been faded out");
-  //   } else if(($("#pool-checkbox").is(':checked') === false) && ($(".listing").is(':visible'))){
-  //     $(".pool").fadeIn(2000);
-  //     console.log("class pool has been faded in");
-  //   };
-  // };
-
   $("#filter-button").on("click", function(e){
     e.preventDefault();
     var starsCount = $(".fa-star").length
@@ -112,40 +92,39 @@ $(document).ready(function(){
         $(".two-star-rated").fadeIn(2000);
         $(".three-star-rated").fadeIn(2000);
         $(".four-star-rated").fadeIn(2000);
-        // matchingResults();
         break;
       case 2:
         $(".one-star-rated").fadeOut(2000);
         $(".two-star-rated").fadeIn(2000);
         $(".three-star-rated").fadeIn(2000);
         $(".four-star-rated").fadeIn(2000);
-        // matchingResults();
         break;
       case 3:
         $(".one-star-rated").fadeOut(2000);
         $(".two-star-rated").fadeOut(2000);
         $(".three-star-rated").fadeIn(2000);
         $(".four-star-rated").fadeIn(2000);
-        // matchingResults();
         break;
       case 4:
         $(".one-star-rated").fadeOut(2000);
         $(".two-star-rated").fadeOut(2000);
         $(".three-star-rated").fadeOut(2000);
         $(".four-star-rated").fadeIn(2000);
-        // matchingResults();
         break;
       case 5:
         $(".one-star-rated").fadeOut(2000);
         $(".two-star-rated").fadeOut(2000);
         $(".three-star-rated").fadeOut(2000);
         $(".four-star-rated").fadeOut(2000);
-        // matchingResults();
         break;
       default:
-        // matchingResults();
         break;
     };
+
+    var numberOfBlackStars = $("#number-of-black-stars");
+    var h4TextCenter = $("<h4>").addClass("text-center");
+    numberOfBlackStars.replaceWith($("<span>").attr("id", "number-of-black-stars").append(h4TextCenter).append("Showing listings for " + starsCount + " stars and up"));
+
   });
 
 
@@ -159,11 +138,8 @@ $(document).ready(function(){
     var hotelName = $(this).parent().prev().text();
     var checkIn = $("#check-in").val().trim();
     var checkOut = $("#check-out").val().trim();
-    console.log(hotelName);
     placeholderDetails.replaceWith($("<span>").addClass("placeholder-details").append("<p>").append("You are staying in the " + hotelName + "<br> from " + checkIn + "<br> to " + checkOut));
     
   });
 
 });
-
-// TO DO LIST
