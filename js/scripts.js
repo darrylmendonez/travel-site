@@ -36,17 +36,10 @@ $(document).ready(function(){
 
   $("#search-button").on("click", function(e){
     e.preventDefault();
-    var locationInput = $("#location-input").val().trim();
-    var checkIn = $("#check-in").val().trim();
-    var checkOut = $("#check-out").val().trim();
-
     // Check for empty fields
     var locationInput = $("#location-input").val().trim();
     var checkIn = $("#check-in").val().trim();
     var checkOut = $("#check-out").val().trim();
-
-    var scrolled=0;
-
     if (locationInput === "" || checkIn === "" || checkOut === ""){
       $("#empty-field-msg").slideDown(500);
       return;
@@ -65,7 +58,7 @@ $(document).ready(function(){
       }, 2000);
     });
     $(".listing").delay(2500).fadeIn(2000);
-    matchingResults();
+    // matchingResults();
 
   }); // End #search-button click
 
@@ -89,25 +82,25 @@ $(document).ready(function(){
     $("#empty-field-msg").fadeOut(500);
   });
 
-  var matchingResultsTotal = $(".listing:visible").length;
-  console.log("matchingResultsTotal = " + matchingResultsTotal)
-  function matchingResults(){
-    console.log("matchingResultsTotal = " + matchingResultsTotal)
-    $("#matching-results-placeholder").replaceWith($("<span>").attr("id", "matching-results-placeholder").append(matchingResultsTotal));
-  };
+  // var matchingResultsTotal = $(".listing:visible").length;
+  // console.log("matchingResultsTotal = " + matchingResultsTotal)
+  // function matchingResults(){
+  //   console.log("matchingResultsTotal = " + matchingResultsTotal)
+  //   $("#matching-results-placeholder").replaceWith($("<span>").attr("id", "matching-results-placeholder").append(matchingResultsTotal));
+  // };
 
 
 
   // Amenities Filter Function
-  function amenities(){
-    if($("#pool-checkbox").is(':checked') && ($(".listing").is(':visible'))){
-      $(".pool").fadeOut(2000);
-      console.log("class pool has been faded out");
-    } else if(($("#pool-checkbox").is(':checked') === false) && ($(".listing").is(':visible'))){
-      $(".pool").fadeIn(2000);
-      console.log("class pool has been faded in");
-    };
-  };
+  // function amenities(){
+  //   if($("#pool-checkbox").is(':checked') && ($(".listing").is(':visible'))){
+  //     $(".pool").fadeOut(2000);
+  //     console.log("class pool has been faded out");
+  //   } else if(($("#pool-checkbox").is(':checked') === false) && ($(".listing").is(':visible'))){
+  //     $(".pool").fadeIn(2000);
+  //     console.log("class pool has been faded in");
+  //   };
+  // };
 
   $("#filter-button").on("click", function(e){
     e.preventDefault();
@@ -119,40 +112,49 @@ $(document).ready(function(){
         $(".two-star-rated").fadeIn(2000);
         $(".three-star-rated").fadeIn(2000);
         $(".four-star-rated").fadeIn(2000);
-        matchingResults();
+        // matchingResults();
         break;
       case 2:
         $(".one-star-rated").fadeOut(2000);
         $(".two-star-rated").fadeIn(2000);
         $(".three-star-rated").fadeIn(2000);
         $(".four-star-rated").fadeIn(2000);
-        matchingResults();
+        // matchingResults();
         break;
       case 3:
         $(".one-star-rated").fadeOut(2000);
         $(".two-star-rated").fadeOut(2000);
         $(".three-star-rated").fadeIn(2000);
         $(".four-star-rated").fadeIn(2000);
-        matchingResults();
+        // matchingResults();
         break;
       case 4:
         $(".one-star-rated").fadeOut(2000);
         $(".two-star-rated").fadeOut(2000);
         $(".three-star-rated").fadeOut(2000);
         $(".four-star-rated").fadeIn(2000);
-        matchingResults();
+        // matchingResults();
         break;
       case 5:
         $(".one-star-rated").fadeOut(2000);
         $(".two-star-rated").fadeOut(2000);
         $(".three-star-rated").fadeOut(2000);
         $(".four-star-rated").fadeOut(2000);
-        matchingResults();
+        // matchingResults();
         break;
       default:
-        matchingResults();
+        // matchingResults();
         break;
     };
+  });
+
+
+  $(".more-info-button").on("click", function(e){
+    e.preventDefault();
+    var currentRow = $(this).parent().parent();
+    $("#remove-row-button").on("click", function(f){
+      currentRow.fadeOut(2000);
+    });
   });
 
 });
