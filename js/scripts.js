@@ -49,6 +49,8 @@ $(document).ready(function(){
     $("#filter-row").hide();
     $(".listing").hide();
     var placeholderLocation = $(".placeholder-location");
+    var locationInputResults = $("#location-input-results");
+    locationInputResults.replaceWith($("<h4>").attr("id", "location-input-results").addClass("text-center").append("Search results for " + locationInput)).hide().fadeIn(2000);
     placeholderLocation.replaceWith($("<span>").addClass("placeholder-location").append(locationInput));
     placeholderLocation.append(locationInput);
     $("#loading-search").fadeIn(500).delay(1000).fadeOut(500);
@@ -58,7 +60,6 @@ $(document).ready(function(){
       }, 2000);
     });
     $(".listing").delay(2500).fadeIn(2000);
-    // matchingResults();
 
   }); // End #search-button click
 
@@ -126,20 +127,20 @@ $(document).ready(function(){
 
     // Display msg for "Showing Listings for # of stars"
     function oneStar (){
-      numberOfBlackStars.replaceWith($("<h4>").attr("id", "number-of-black-stars").append(h4).append("Showing listings for " + starsCount + " star and up"));
+      numberOfBlackStars.replaceWith($("<h4>").attr("id", "number-of-black-stars").addClass("text-center").append(h4).append("with " + starsCount + " star and up"));
     };
     function twoToFourStars (){
-      numberOfBlackStars.replaceWith($("<h4>").attr("id", "number-of-black-stars").append(h4).append("Showing listings for " + starsCount + " stars and up"));
+      numberOfBlackStars.replaceWith($("<h4>").attr("id", "number-of-black-stars").addClass("text-center").append(h4).append("with " + starsCount + " stars and up"));
     };
     function fiveStars (){
-      numberOfBlackStars.replaceWith($("<h4>").attr("id", "number-of-black-stars").append(h4).append("Showing listings for " + starsCount + " stars"));
+      numberOfBlackStars.replaceWith($("<h4>").attr("id", "number-of-black-stars").addClass("text-center").append(h4).append("with " + starsCount + " stars"));
     };
     if (starsCount === 1){
-      oneStar();
+      oneStar().hide().fadeIn(2000);
     } else if (starsCount === 5){
-      fiveStars();
+      fiveStars().hide().fadeIn(2000);
     } else {
-      twoToFourStars();
+      twoToFourStars().hide().fadeIn(2000);
     }
 
   });
