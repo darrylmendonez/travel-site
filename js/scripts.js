@@ -54,7 +54,7 @@ $(document).ready(function(){
     $("#loading-search").fadeIn(500).delay(1000).fadeOut(500);
     $("#filter-row").delay(2000).fadeIn(500, function(){
       $('html, body').animate({
-        scrollTop: $("#filter-row").offset().top
+        scrollTop: $("#search-row").offset().top
       }, 2000);
     });
     $(".listing").delay(2500).fadeIn(2000);
