@@ -55,9 +55,9 @@ $(document).ready(function(){
     placeholderLocation.append(locationInput);
     $("#loading-search").fadeIn(500).delay(1000).fadeOut(500);
     $(".filter-and-results-msg-row").delay(2000).fadeIn(500, function(){
-      $('html, body').animate({
+      $("html, body").animate({
         scrollTop: $("#search-row").offset().top
-      }, 2000);
+      }, 2000); 
     });
     $(".listing").delay(2500).fadeIn(2000);
 
