@@ -129,7 +129,7 @@ $(document).ready(function(){
     function oneStar (){
       numberOfBlackStars.replaceWith($("<h4>").attr("id", "number-of-black-stars").addClass("text-center").append(h4).append("with a " + starsCount + " star rating and up"));
     };
-    function twoToFourStars (){
+    function zeroAndTwoToFourStars (){
       numberOfBlackStars.replaceWith($("<h4>").attr("id", "number-of-black-stars").addClass("text-center").append(h4).append("with a " + starsCount + " star rating and up"));
     };
     function fiveStars (){
@@ -142,7 +142,7 @@ $(document).ready(function(){
       fiveStars();
       $("#location-and-stars-msg").hide().fadeIn(2000);
     } else {
-      twoToFourStars();
+      zeroAndTwoToFourStars();
       $("#location-and-stars-msg").hide().fadeIn(2000);
     }
 
