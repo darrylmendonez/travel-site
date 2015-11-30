@@ -127,13 +127,13 @@ $(document).ready(function(){
 
     // Display msg for "Showing Listings for # of stars"
     function oneStar (){
-      numberOfBlackStars.replaceWith($("<h4>").attr("id", "number-of-black-stars").addClass("text-center").append(h4).append("with " + starsCount + " star and up"));
+      numberOfBlackStars.replaceWith($("<h4>").attr("id", "number-of-black-stars").addClass("text-center").append(h4).append("with a " + starsCount + " star rating and up"));
     };
     function twoToFourStars (){
-      numberOfBlackStars.replaceWith($("<h4>").attr("id", "number-of-black-stars").addClass("text-center").append(h4).append("with " + starsCount + " stars and up"));
+      numberOfBlackStars.replaceWith($("<h4>").attr("id", "number-of-black-stars").addClass("text-center").append(h4).append("with a " + starsCount + " star rating and up"));
     };
     function fiveStars (){
-      numberOfBlackStars.replaceWith($("<h4>").attr("id", "number-of-black-stars").addClass("text-center").append(h4).append("with " + starsCount + " stars"));
+      numberOfBlackStars.replaceWith($("<h4>").attr("id", "number-of-black-stars").addClass("text-center").append(h4).append("with a " + starsCount + " star rating"));
     };
     if (starsCount === 1){
       oneStar();

@@ -26,3 +26,7 @@
 .listing-img {
   width: 250px;
 }
+
+.intro {
+  overflow-x:hidden;
+}
